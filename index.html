@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<!--This site is managed by Kiet.-->
+
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/Kiet.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/Kiet.svg" type="image/svg+xml">
+        <meta name="description" content="Kiet's profile site">
+        <meta property="og:description" content="Kiet's profile site.">
+        <meta property="og:site_name" content="Kiet.">
+        <meta property="og:image" content="./Kiet.svg">
+        <meta name="robots" content="index, follow">
+        <title></title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: Arial,Sans-Serif;
+                color: #fff;
+            }
+            html,body {
+                overflow-x: hidden;
+                width: 100%;
+                height: 100%;
+                background-color: #222;
+            }
+            header {
+                z-index: 99;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                align-items: center;
+                padding: 3%;
+                background-color: #fff1;
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+                border: 1.5px solid #ffffff08;
+                box-shadow: 0 0 5px #0004;
+            }
+            header h1 {
+                -webkit-text-stroke: 1px #3f3;
+                text-stroke: 1px #3f3;
+                color: #0000;
+                line-height: 1;
+                font-family: futura;
+                font-size: 2.2rem;
+                animation: tika 1s infinite;
+            }
+            header img {
+                margin-left: 5%;
+                box-shadow: 0 0 5px #f008;
+                background-color: #fff8;
+                border: .5px solid #fff8;
+                transition-duration: 1s;
+            }
+            header img:hover {
+                translate: 0 100px;
+            }
+            #HumCheck {
+                display: none;
+            }
+            #HumBtn {
+                margin-inline: 10px;
+                z-index: 9999;
+                text-align: center;
+            }
+            #HumBtn div {
+                background-color: #fff;
+                width: 50px;
+                margin-block: 10px;
+                height: 1px;
+                transition-duration: .3s;
+            }
+            #HumCheck:checked ~ #HumBtn div:nth-child(1) {
+                rotate: 30deg;
+                margin-block: 0;
+            }
+            #HumCheck:checked ~ #HumBtn div:nth-child(2) {
+                rotate: -30deg;
+                margin-block: 0;
+            }
+            #humMenu {
+                z-index: 1000;
+                position: fixed;
+                width: 70%;
+                height: 100vh;
+                transition-duration: .5s;
+                left: -80%;
+                top: 0;
+                bottom: 0;
+                padding: 10px;
+                padding-top: 100px;
+                background-color: #fff3;
+                -webkit-backdrop-filter: blur(4px);
+                backdrop-filter: blur(4px);
+            }
+            #HumCheck:checked ~ #humMenu {
+                left: 0;
+            }
+            #mouseS {
+                z-index: 99999;
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                border-radius: 100vh;
+                pointer-events: none;
+                -webkit-backdrop-filter: invert();
+                backdrop-filter: invert();
+                transition: transform 0.5s ease;
+                margin: 0;
+                padding: 0;
+            }
+            #welcome {
+                width: 100%;
+                height: auto;
+                align-items: center;
+                text-align: center;
+                background-color: #111;
+                padding-block: 50%;
+                background-image: url('./back.webp');
+                background-size: 100% 100%;
+            }
+            #welcome h1 {
+                text-shadow: 0 0 5px #111;
+                white-space: nowrap;
+            }
+            #wtk {
+                -webkit-text-stroke: 1px #55f;
+                text-stroke: 1px #55f;
+                color: #0000;
+                line-height: 1;
+                font-family: futura;
+                font-size: 2.2rem;
+                border-bottom: 2px solid #3f3;
+                text-shadow: 0 0 10px #55f8;
+            }
+            main {
+                text-align: center;
+                padding: 16%;
+                padding-top: 30px;
+            }
+            #contents {
+                padding: 10%;
+                padding-top: 10%;
+                margin-block: 25%;
+                background-color: #fff3;
+                border: 1.5px solid #ffffff08;
+                box-shadow: 0 0 15px #1f88;
+                text-align: left;
+                border-radius: 5px;
+            }
+            #contents h2 {
+                border-left: 5px solid #ee0;
+                padding-left: 5px;
+                margin-block: 10px;
+            }
+            #contents p, #contents ul, #contents li {
+                margin-left: 5%;
+            }
+            #button {
+                font-size: 1rem;
+                background-color: #0af;
+                color: #fff;
+                padding: 10px;
+                border: none;
+                border-radius: 100vh;
+                transition-duration: .3s;
+            }
+            #button:active {
+                background-color: #fff;
+            }
+            footer {
+                padding: 10%;
+                background-color: #111;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            footer span {
+                display: flex;
+                align-items: center;
+            }
+            footer h1 {
+                -webkit-text-stroke: 1px #fff;
+                text-stroke: 1px #fff;
+                color: #0000;
+                line-height: 1;
+                font-family: futura;
+                font-style: normal;
+                font-size: 2.2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
+            h4 {
+                font-size: 1.1rem;
+            }
+            h5 {
+                font-size: 1rem;
+            }
+            h6 {
+                font-size: 0.9rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            hr {
+                border: .5px solid #fff;
+                margin-block: 20px;
+            }
+            
+            @keyframes tika {
+                0% {
+                    opacity: 0;
+                }
+                5% {
+                    opacity: 1;
+                }
+                95% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            @keyframes gura {
+                0% {
+                    rotate: 30deg;
+                }
+                50% {
+                    rotate: -30deg;
+                }
+                100% {
+                    rotate: 30deg;
+                }
+            }
+            @media (max-width: 999px) {
+                #mouseS {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <input type="checkbox" id="HumCheck">
+            <label id="HumBtn" for="HumCheck">
+                <div></div>
+                <div></div>
+            </label>
+            <h1>Kiet.</h1>
+            <img src="./Kiet.svg" width="30px" height="auto">
+            <div id="mouseS"></div>
+            <nav id="humMenu">
+                <h3><a href="line://msg/text/https://kiet.f5.si/">Share on LINE</a></h3>
+                <hr>
+                <h3><a href="./todo.html">My First JavaScript App</a></h3>
+                <hr>
+                <button id="button" onclick="copyLink()">Copy the URL</button>
+            </nav>
+        </header>
+        <div id="welcome">
+            <h1>Welcome to <span id="wtk">Kiet.</span></h1>
+        </div>
+        <main>
+            <div id="contents">
+                <h2>About me</h2>
+                <p>Hi, I’m Kiet. I’m 14 years old. I am interested in web design and programming (Scratch), and I am aiming to become a web designer and game developer. I make a game with Scratch.</p>
+            </div>
+            <hr>
+            <div id="contents">
+                <h2>My skill</h2>
+                <p>
+                    <ul>
+                        <li>HTML</li><br>
+                        I can use it a little. It is used here.
+                        <hr>
+                        <li>CSS</li><br>
+                        I can use it a little. It is used here.
+                        <hr>
+                        <li>JavaScript</li><br>
+                        I can use it a little. It is used here. There is JavaScript App in my site. Please touch humburger menu.
+                        <hr>
+                        <li>Scratch</li><br>
+                        I can use it a little. I often make game with it.
+                        <hr>
+                    </ul>
+                    <strong>Coding is very fun.</strong>
+                </p>
+            </div>
+            <hr>
+            <div id="contents">
+                <h2>Game</h2>
+                <p>I enjoy making games, particularly creating action games. When making action games, I find creating the physics engine enjoyable.</p>
+            </div>
+            <hr>
+            <div id="contents">
+                <h2>Technology</h2>
+                <p>HTML, CSS and JavaScript are used here. JavaScript library isn't used here.</p>
+            </div>
+        </main>
+        <footer>
+            <span><h1>Kiet.</h1>&nbsp;<img src="./Kiet.svg" width="30px" height="auto"></span><br>
+            <p>All Rights Reserved.</p>
+            <hr>
+            <a href="https://kiet.f5.si/">home</a> /
+            <a href="https://github.com/gabillan/kiet">Source</a> /
+            <a href="https://scratch.mit.edu/users/Kiet-JP/">Scratch</a>
+            <hr>
+            <p>Copyright &copy; 2024 Kiet.</p>
+        </footer>
+        <script>
+            // Copy the link
+            function copyLink(){var e=document.createElement("textarea");e.value=window.location.href,e.style.position="fixed",e.style.opacity=0,document.body.appendChild(e),e.select(),document.execCommand("copy"),document.body.removeChild(e),alert("Copied the URL.")}
+            // mouse
+            document.addEventListener("DOMContentLoaded",function(){let e=document.getElementById("mouseS");document.addEventListener("mousemove",function(t){let n=t.clientX,o=t.clientY;e.style.transform=`translate(${n}px, ${o}px)`})});
+        </script>
+    </body>
+</html>
