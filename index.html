@@ -5,7 +5,6 @@
 <html lang="en">
     <head prefix="og: https://ogp.me/ns#">
         <meta charset="UTF-8">
-        <meta name="google-site-verification" content="2ZPYWx_tuS3-Mnaj0rIV3KQcLGTeN4HpUEmlc5ejsjQ">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="/Kiet.svg" type="image/svg+xml">
         <link rel="apple-touch-icon" href="/Kiet.svg" type="image/svg+xml">
@@ -58,10 +57,11 @@
                 box-shadow: 0 0 5px #f008;
                 background-color: #fff8;
                 border: .5px solid #fff8;
-                transition-duration: 1s;
+                transition-duration: .3s;
             }
             header img:hover {
-                translate: 0 100px;
+                opacity: 0;
+                scale: 2;
             }
             #HumCheck {
                 display: none;
@@ -130,6 +130,7 @@
             #welcome h1 {
                 text-shadow: 0 0 5px #111;
                 white-space: nowrap;
+                animation: 1s abc;
             }
             #wtk {
                 -webkit-text-stroke: 1px #55f;
@@ -252,6 +253,16 @@
                     display: none;
                 }
             }
+            @keyframes abc {
+                0% {
+                    scale: 3 3;
+                    opacity: 0;
+                }
+                100% {
+                    scale: 1 1;
+                    opacity: 1;
+                }
+            }
         </style>
     </head>
     <body>
@@ -262,7 +273,7 @@
                 <div></div>
             </label>
             <h1>Kiet.</h1>
-            <img src="./Kiet.svg" width="30px" height="auto">
+            <img src="./Kiet.svg" width="30px" height="auto" alt="Kiet.">
             <div id="mouseS"></div>
             <nav id="humMenu">
                 <h3><a href="#welcome">Top</a></h3>
@@ -315,7 +326,7 @@
             </div>
         </main>
         <footer>
-            <span><h1>Kiet.</h1>&nbsp;<img src="./Kiet.svg" width="30px" height="auto"></span><br>
+            <span><h1>Kiet.</h1>&nbsp;<img src="./Kiet.svg" width="30px" height="auto" alt="Kiet."></span><br>
             <p>All Rights Reserved.</p>
             <hr>
             <a href="https://kiet.f5.si/">home</a> /
