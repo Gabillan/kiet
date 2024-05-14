@@ -13,13 +13,14 @@
         <meta property="og:site_name" content="Kiet.">
         <meta property="og:image" content="./Kiet.svg">
         <meta name="robots" content="index, follow">
-        <title></title>
+        <title>Kiet.</title>
         <style>
             * {
                 margin: 0;
                 padding: 0;
                 font-family: Arial,Sans-Serif;
                 color: #fff;
+                scroll-behavior: smooth;
             }
             html,body {
                 overflow-x: hidden;
@@ -144,7 +145,7 @@
                 padding: 16%;
                 padding-top: 30px;
             }
-            #contents {
+            .contents {
                 padding: 10%;
                 padding-top: 10%;
                 margin-block: 25%;
@@ -154,12 +155,12 @@
                 text-align: left;
                 border-radius: 5px;
             }
-            #contents h2 {
+            .contents h2 {
                 border-left: 5px solid #ee0;
                 padding-left: 5px;
                 margin-block: 10px;
             }
-            #contents p, #contents ul, #contents li {
+            .contents p, .contents ul, .contents li {
                 margin-left: 5%;
             }
             #button {
@@ -263,6 +264,8 @@
             <img src="./Kiet.svg" width="30px" height="auto">
             <div id="mouseS"></div>
             <nav id="humMenu">
+                <h3><a href="#welcome">Top</a></h3>
+                <hr>
                 <h3><a href="line://msg/text/https://kiet.f5.si/">Share on LINE</a></h3>
                 <hr>
                 <h3><a href="./todo.html">My First JavaScript App</a></h3>
@@ -274,12 +277,12 @@
             <h1>Welcome to <span id="wtk">Kiet.</span></h1>
         </div>
         <main>
-            <div id="contents">
+            <div class="contents">
                 <h2>About me</h2>
                 <p>Hi, I’m Kiet. I’m 14 years old. I am interested in web design and programming (Scratch), and I am aiming to become a web designer and game developer. I make a game with Scratch.</p>
             </div>
             <hr>
-            <div id="contents">
+            <div class="contents" data-aos="fade-up">
                 <h2>My skill</h2>
                 <p>
                     <ul>
@@ -300,12 +303,12 @@
                 </p>
             </div>
             <hr>
-            <div id="contents">
+            <div class="contents">
                 <h2>Game</h2>
                 <p>I enjoy making games, particularly creating action games. When making action games, I find creating the physics engine enjoyable.</p>
             </div>
             <hr>
-            <div id="contents">
+            <div class="contents">
                 <h2>Technology</h2>
                 <p>HTML, CSS and JavaScript are used here. JavaScript library isn't used here.</p>
             </div>
